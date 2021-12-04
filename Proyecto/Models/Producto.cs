@@ -3,15 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+//Bibliotecas necesarias
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 namespace Proyecto.Models
 {
+    [Table("Productos")]
     public class Producto
     {
-        //Objetos que va a tener el producto
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        
+        [Column("IdProducto")]
         public int IdProducto { get; set; }
-        public string Nombre { get; set;}
-        public decimal Precio { get; set; }
-        public string RutaImagen { get; set; }
+
+        [Column("Nombre")]
+        public string Nombre { get; set; }
+
+        [Column("Precio")]
+        public int Precio { get; set; }
+
+        [Column("Imagen")]
+        public string Imagen { get; set; }
+
     }
 }
