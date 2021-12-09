@@ -10,7 +10,7 @@ namespace Proyecto.Controllers
 {
     public class ProductoController : Controller
     {
-        RepositoryProducto repo;
+        RepositoryProducto repo; //referencia del clase repositoryproducto
         public ProductoController()
         {
             repo = new RepositoryProducto();

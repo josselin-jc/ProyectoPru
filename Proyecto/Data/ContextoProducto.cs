@@ -7,6 +7,7 @@ using System.Web;
 
 namespace Proyecto.Data
 {
+    //realiza la conexion con la base de datos
     public class ContextoProducto: DbContext 
     {
         public ContextoProducto(): base("conexionproductos") { }

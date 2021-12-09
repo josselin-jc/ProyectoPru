@@ -3,7 +3,7 @@
     ViewBag.Title = "ListaProductos";
 }
 
-<h2>Productos disponibles</h2>
+<h2>ListaProductos</h2>
 
 @Html.ActionLink("Ver carrito de compra", "ProductosCarrito", "Producto")
 <br />
@@ -11,24 +11,26 @@
     <tr>
         <th>ID</th>
         <th>NOMBRE</th>
-        <th>TELÉFONO</th>
+        <th>PRECIO</th>
         <th>IMAGEN</th>
         <th>AGREGAR AL CARRITO</th>
     </tr>
     @foreach (Producto prod in Model)
     {
         <tr>
+            <td>@prod.IdProducto</td>
+
             <td>@prod.Nombre</td>
             <td>@prod.Precio</td>
-            <td><img style="width:70px; height:70px" src="~/img/@prod.Imagen"/></td>
+            <td><img style="width:70px; height:70px" src="~/img/@prod.Imagen" /></td>
 
             @if (ViewBag.Carrito != null && ViewBag.Carrito.Contains(prod.IdProducto))
             {
-                <th><img style="width:20px;height:20px" src="https://image.flaticon.com/icons/png/512/107/107831.png"/><span>Añadido al carrito</span></th>
+                <th><img style="width:20px;height:20px" src="https://image.flaticon.com/icons/png/512/107/107831.png" /><span>Añadido al carrito</span></th>
             }
             else
             {
-                <td>@Html.ActionLink("Añadir L carrito","ListaProductos","Producto",new { id=prod.IdProducto }, new { @class="btn btn-primary"})</td>
+                <td>@Html.ActionLink("Añadir al carrito", "ListaProductos", "Producto", new { id = prod.IdProducto }, new { @class = "btn btn-primary" })</td>
             }
 
 

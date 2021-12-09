@@ -22,7 +22,7 @@ namespace Proyecto.Models
         public string Nombre { get; set; }
 
         [Column("Precio")]
-        public int Precio { get; set; }
+        public double Precio { get; set; }
 
         [Column("Imagen")]
         public string Imagen { get; set; }
